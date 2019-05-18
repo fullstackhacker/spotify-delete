@@ -16,7 +16,7 @@ const server = express();
 server.use(middlewares);
 server.use(appRouter);
 
-const { port } = require('Config');
+const { port } = require('config');
 server.listen(port, () => {
   console.log(`listening on PORT: ${port}`);
 });
