@@ -8,7 +8,7 @@ const spotifyStrategy = new SpotifyStrategy(
   {
     clientID,
     clientSecret,
-    callbackURL: 'api/auth/callback'
+    callbackURL: 'https://spotify.mush.dev/api/auth/callback'
   },
   function(accessToken, refreshToken, expires_in, profile, next) {
     next(null, profile);
