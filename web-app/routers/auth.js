@@ -7,7 +7,7 @@ const isAuthenticated = require('middleware/isAuthenticated');
 
 router.get('/', passport.authenticate('spotify'));
 
-router.get('/callback', isAuthenticated, (req, res) => {
+router.get('/callback', passport.authenticate('spotify', { failureRedirect: '/' }), (req, res) => {
   return res.redirect('/app');
 });
 
