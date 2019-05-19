@@ -7,7 +7,7 @@ router.get('/', passport.authenticate('spotify'));
 
 router.get('/callback', (req, res) => {
   console.log(req);
-  return res.redirect('/');
+  return res.redirect('/app');
 });
 
 module.exports = router;
