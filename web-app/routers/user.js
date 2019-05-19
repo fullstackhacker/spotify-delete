@@ -9,3 +9,5 @@ router.get('/', isAuthenticated, (req, res) => {
     user: req.user
   });
 });
+
+module.exports(router);
