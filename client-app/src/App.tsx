@@ -7,11 +7,20 @@ const App: React.FC = () => {
     window.location.href = '/api/auth/';
   }, []);
 
-  return (
-    <div className='App'>
-      <button onClick={login}> Login </button>
-    </div>
-  );
+  const url = new URL(window.location.href);
+
+  switch (url.pathname) {
+    case '/':
+      return (
+        <div className='App'>
+          <button onClick={login}> Login </button>
+        </div>
+      );
+    case '/app':
+      return <div>logged in boyyo</div>;
+    default:
+      return <div>Nothing</div>;
+  }
 };
 
 export default App;
