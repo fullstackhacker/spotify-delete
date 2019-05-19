@@ -3,10 +3,11 @@
 const passport = require('passport');
 const router = require('express').Router();
 
+const isAuthenticated = require('middleware/isAuthenticated');
+
 router.get('/', passport.authenticate('spotify'));
 
-router.get('/callback', (req, res) => {
-  console.log(req);
+router.get('/callback', isAuthenticated, (req, res) => {
   return res.redirect('/app');
 });
 
